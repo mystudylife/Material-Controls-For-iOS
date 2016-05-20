@@ -41,6 +41,7 @@ IB_DESIGNABLE
 @property(nonatomic, getter=isEnabled) IBInspectable BOOL enabled;
 @property(nonatomic) IBInspectable CGFloat step;
 @property(nonatomic) IBInspectable BOOL enabledValueLabel;
+@property(nullable, nonatomic) IBInspectable NSString *valueFormatString;
 @property(nonatomic) IBInspectable NSUInteger precision;
 
 @end

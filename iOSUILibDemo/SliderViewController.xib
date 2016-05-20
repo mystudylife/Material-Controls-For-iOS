@@ -76,10 +76,10 @@
                                     <real key="value" value="0.0"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="number" keyPath="step">
-                                    <real key="value" value="3"/>
+                                    <real key="value" value="10"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
-                                    <real key="value" value="15"/>
+                                    <real key="value" value="100"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="thumbOnColor">
                                     <color key="value" red="0.35294117650000001" green="0.61568627450000002" blue="0.36470588240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -88,12 +88,13 @@
                                     <color key="value" red="0.35294117650000001" green="0.61568627450000002" blue="0.36470588240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="number" keyPath="value">
-                                    <real key="value" value="9"/>
+                                    <real key="value" value="50"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="enabledValueLabel" value="YES"/>
                                 <userDefinedRuntimeAttribute type="color" keyPath="tickMarksColor">
                                     <color key="value" red="1" green="0.041036519703868346" blue="0.010226881207028415" alpha="1" colorSpace="calibratedRGB"/>
                                 </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="string" keyPath="valueFormatString" value="%.f%%"/>
                             </userDefinedRuntimeAttributes>
                             <variation key="default">
                                 <mask key="constraints">

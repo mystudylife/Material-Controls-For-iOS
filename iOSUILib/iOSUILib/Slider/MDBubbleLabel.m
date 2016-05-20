@@ -33,6 +33,8 @@
 @implementation MDBubbleLabel {
   UILabel *label;
   NSLayoutConstraint *labelWithConstraint;
+  CGFloat value;
+  NSString *valueFormatString;
 }
 
 - (instancetype)init {
@@ -50,6 +52,8 @@
 }
 
 - (void)initialize {
+  valueFormatString = [self defaultValueFormatString:_precision];
+    
   label = [[UILabel alloc] init];
   label.font = [UIFontHelper robotoFontOfSize:kMDTextSize];
   label.textColor = [UIColor whiteColor];
@@ -122,22 +126,33 @@
   self.layer.mask = markLayer;
 }
 
-- (NSString *)valueFormatString {
-  return [NSString stringWithFormat:@"%%.%luf", (unsigned long)_precision];
+- (NSString *)defaultValueFormatString:(NSUInteger) precision {
+    return [NSString stringWithFormat:@"%%.%luf", (unsigned long)precision];
 }
 
 - (void)calculateLabelWidth {
   NSString *maxValue =
-      [NSString stringWithFormat:[self valueFormatString], _maxValue];
+      [NSString stringWithFormat:valueFormatString, _maxValue];
   NSDictionary *attributes = @{NSFontAttributeName : label.font};
 
   labelWithConstraint.constant =
       [maxValue sizeWithAttributes:attributes].width + 1;
 }
 
+- (void)updateLabelText {
+  [label setText:[NSString stringWithFormat:valueFormatString, value]];
+}
+
 #pragma mark public methods
-- (void)setValue:(CGFloat)value {
-  [label setText:[NSString stringWithFormat:[self valueFormatString], value]];
+- (void)setValue:(CGFloat)vvalue {
+  value = vvalue;
+  [self updateLabelText];
+}
+
+- (void)setValueFormatString:(NSString *)vvalueFormatString {
+  valueFormatString = vvalueFormatString;
+  [self calculateLabelWidth];
+  [self updateLabelText];
 }
 
 - (void)setTextColor:(UIColor *)textColor {
@@ -151,7 +166,9 @@
 
 - (void)setPrecision:(NSUInteger)precision {
   _precision = precision;
+  valueFormatString = [self defaultValueFormatString:precision];
   [self calculateLabelWidth];
+  [self updateLabelText];
 }
 
 - (void)setMaxValue:(CGFloat)maxValue {

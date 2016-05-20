@@ -464,6 +464,10 @@
   }
 }
 
+- (void) setValueFormatString:(NSString *)valueFormatString {
+    [thumbView.bubble setValueFormatString: valueFormatString];
+}
+
 - (void)setValue:(CGFloat)value {
   if (_value != value) {
     if (value < _minimumValue)

@@ -64,6 +64,7 @@
   //                                                  constant:0]];
   _discreteSliderValue.text =
       [NSString stringWithFormat:@"%.f", _discreteSilder.value];
+  //_discreteSilder.valueFormatString = @"%.f%%";
   _continuousSliderValue.text =
       [NSString stringWithFormat:@"%.01f", _mdSlider.value];
 }

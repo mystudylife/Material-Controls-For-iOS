@@ -27,8 +27,10 @@
 @property(nonatomic) NSUInteger precision;
 @property(nonatomic) CGFloat maxValue;
 
+- (void)setValueFormatString:(nonnull NSString *)valueFormatString;
 - (void)setValue:(CGFloat)value;
 - (void)setTextColor:(nonnull UIColor *)textColor;
 - (void)setFont:(nonnull UIFont *)font;
 - (void)setMaxValue:(CGFloat)value;
+
 @end
